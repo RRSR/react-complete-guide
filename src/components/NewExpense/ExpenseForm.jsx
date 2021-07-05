@@ -3,30 +3,18 @@ import './ExpenseForm.css';
 
 const ExpenseForm = () => {
 
-   /* const [enteredTitle, setEnteredTitle] = useState('');
+    const [enteredTitle, setEnteredTitle] = useState('');
     const [enteredAmount, setEnteredAmount] = useState('');
-    const [enteredDate, setEnteredDate] = useState('');*/
-    const [userInput, setUserInput]= useState({
-        enteredTitle:'',
-        enteredAmount:'',
-        enteredDate:''
-    })
+    const [enteredDate, setEnteredDate] = useState('');
 
     const titleChangeHandler = (event) => {
-        // setEnteredTitle(event.target.value);                               Multi state approach
-        // setUserInput({...userInput,enteredTitle: event.target.value});    Single state approach but here no guarantee of always getting the latest value of the userInput for ...userInput
-        setUserInput((previousState) => {                            //Single state approach but here the previousState always have the latest value. So recommended approach.
-            return {...previousState,enteredTitle: event.target.value};
-        });
-
+        setEnteredTitle(event.target.value);
     }
     const amountChangeHandler = (event) => {
-        // setEnteredAmount(event.target.value);
-        setUserInput({...userInput,enteredAmount: event.target.value});
+        setEnteredAmount(event.target.value);
     }
     const dateChangeHandler = (event) => {
-        // setEnteredDate(event.target.value);
-        setUserInput({...userInput,enteredDate: event.target.value});
+        setEnteredDate(event.target.value);
     }
 
     return (
